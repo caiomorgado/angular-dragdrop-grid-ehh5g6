@@ -1,0 +1,81 @@
+
+  <!-- <div class="presentation-header">
+    <div class="row">
+      <h1 class="col presentation-nome">Teste</h1>
+      <div class="col edit-container">
+        <p class="edit-button" (click)="openModalPresentation()">Editar</p>
+      </div>
+      <div class="col-6 buttons-container">
+        <button mat-button class="save-presentation" (click)="savePresentation()" [disabled]="!hadEditing">Salvar
+          apresentação
+        </button>
+        <button mat-button class="play-presentation">
+          <img src="assets/icons/ic_play_arrow.svg" alt="icone play">
+          Play
+        </button>
+      </div>
+    </div>
+  </div> -->
+  
+  <div [hidden]="true">
+     <p>
+        <a>TESTE</a>
+      </p>
+  </div>
+
+
+  
+  <div [hidden]="false">
+  <div class="slides-container" cdkDropListGroup>
+    <div cdkDropList [cdkDropListEnterPredicate]="dropListEnterPredicate" (cdkDropListDropped)="dropListDropped()"></div>
+    <div cdkDropList class="card presentation-card" *ngFor="let slide of slideList" [cdkDropListEnterPredicate]="dropListEnterPredicate" (cdkDropListDropped)="dropListDropped()">
+      <div class="drag-slide" cdkDrag (cdkDragMoved)="dragMoved($event)">    
+        <div class="image-container">
+          <div class="presentation-card-hover">
+            <div class="delete-cross" (click)="deleteSlide(slide.name)">
+              <svg>
+                <use xlink:href="assets/icons/ic_clear_white_24px.svg#ic_clear" alt="icone clear"></use>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <button mat-button class="vert-button">
+          <svg>
+            <use xlink:href="assets/icons/ic_more_vert_24px.svg#ic_more_vert" alt="icone more vert"></use>
+          </svg>
+        </button>
+        <p>
+          <a>{{slide.idDashboardMetabase}}</a>
+        </p>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+
+<!-- <button (click)="add(items)">Add</button> 
+<button (click)="remove(items)">Remove</button> 
+<button (click)="shuffle(items)">Shuffle</button><br/>
+
+
+<div class="example-container" cdkDropListGroup>
+  <div cdkDropList [cdkDropListEnterPredicate]="dropListEnterPredicate" (cdkDropListDropped)="dropListDropped(slideList)"></div>
+  <div cdkDropList *ngFor="let slide of slideList" [cdkDropListEnterPredicate]="dropListEnterPredicate" (cdkDropListDropped)="dropListDropped(slideList)">
+    <div cdkDrag class="example-box" (cdkDragMoved)="dragMoved($event);">{{slide.idDashboardMetabase}}</div>
+  </div>
+</div>  -->
+
+
+
+<!-- <button (click)="add(items)">Add</button> 
+<button (click)="remove(items)">Remove</button> 
+<button (click)="shuffle(items)">Shuffle</button><br/>
+<ul class="example-list"><li *ngFor="let item of items">{{ item }}</li></ul>
+
+<div class="example-container" cdkDropListGroup>
+  <div cdkDropList [cdkDropListEnterPredicate]="dropListEnterPredicate" (cdkDropListDropped)="dropListDropped(items)"></div>
+  <div cdkDropList *ngFor="let item of items" [cdkDropListEnterPredicate]="dropListEnterPredicate" (cdkDropListDropped)="dropListDropped(items)">
+    <div cdkDrag class="example-box" (cdkDragMoved)="dragMoved($event);">{{item}}</div>
+  </div>
+</div>  -->
